@@ -148,10 +148,15 @@ hide_edge_borders smart
 # finds out, if available)
 bar {
   colors {
+    # colors for the i3bar components
+    # <colorclass> <border> <background> <text>
     background         #282828
     statusline         #ebdbb2
+    separator          #665c54
+    focused_background #504945
     focused_workspace  #83a598 #458588 #ebdbb2
-    inactive_workspace #7c6f64 #665c54 #bdae93
+    active_workspace   #7c6f64 #665c54 #ebdbb2
+    inactive_workspace #504945 #3c3836 #ebdbb2
     urgent_workspace   #fe8019 #d65d0e #ebdbb2
     binding_mode       #8ec07c #689d6a #ebdbb2
   }
@@ -166,3 +171,5 @@ client.focused          #83a598 #458588 #ebdbb2 #83a598 #458588
 client.focused_inactive #7c6f64 #665c54 #ebdbb2 #7c6f64 #665c54
 client.unfocused        #504945 #3c3836 #ebdbb2 #504945 #3c3836
 client.urgent           #fe8019 #d65d0e #ebdbb2 #fe8019 #d65d0e
+client.placeholder      #504945 #3c3836 #ebdbb2 #504945 #3c3836
+client.background       #282828
