@@ -164,7 +164,7 @@ bar {
     binding_mode       #8ec07c #689d6a #ebdbb2
   }
   position top
-  status_command i3status
+  status_command i3blocks
   tray_output primary
 }
 
