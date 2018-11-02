@@ -1,40 +1,27 @@
-# i3 config file (v4)
+# i3 config file (v4) vim: foldmethod=marker
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# set the modifier key to Super/Win
+# Key Bindings {{{1
+# Set the modifier key
+# Mod4: Super
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:Hack,FontAwesome 9
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Bindings to start things {{{2
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# kill focused window
-bindsym $mod+Shift+q kill
-
-# start dmenu (a program launcher)
+# rofi run launcher
 bindsym $mod+d exec rofi -show run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# rofi ssh launcher
+bindsym $mod+s exec rofi -show ssh
+
+# Bindings to switch focus {{{2
+
+# rofi window switcher
+bindsym $mod+w exec rofi -show window
 
 # change focus
 bindsym $mod+h focus left
@@ -42,28 +29,13 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+# focus the parent container
+bindsym $mod+Shift+a focus parent
 
-# split in horizontal orientation
-bindsym $mod+b split h
+# focus the child container
+bindsym $mod+a focus child
 
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# move container to next output
-bindsym $mod+x move workspace to output right
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+# Bindings for floating windows {{{2
 
 # toggle tiling / floating
 bindsym $mod+Shift+y floating toggle
@@ -71,14 +43,12 @@ bindsym $mod+Shift+y floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+y focus mode_toggle
 
-# focus the parent container
-bindsym $mod+Shift+a focus parent
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
-# focus the child container
-bindsym $mod+a focus child
+# Bindings for workspaces {{{2
 
-# Define names for default workspaces for which we configure key bindings later
-# on. We use variables to avoid repeating the names in multiple places.
+# Workspace definitions
 set $ws1   "1"
 set $ws2   "2"
 set $ws3   "3"
@@ -102,6 +72,8 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
+# Bindings for moving windows {{{2
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -114,38 +86,65 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-# lock the screen with i3lock
-bindsym $mod+Mod1+l exec "i3lock --image $HOME/Pictures/lock_image --tiling --ignore-empty-password --show-failed-attempts"
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# move container to next output
+bindsym $mod+x move workspace to output right
+
+# Bindings for layouts {{{2
+
+# split in horizontal orientation
+bindsym $mod+Shift+b split h
+
+# split in vertical orientation
+bindsym $mod+Shift+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+Shift+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
-
-  # Pressing left will shrink the window’s width.
-  # Pressing right will grow the window’s width.
-  # Pressing up will shrink the window’s height.
-  # Pressing down will grow the window’s height.
   bindsym h resize shrink width  10 px or 10 ppt
   bindsym j resize grow   height 10 px or 10 ppt
   bindsym k resize shrink height 10 px or 10 ppt
   bindsym l resize grow   width  10 px or 10 ppt
 
-  # back to normal: Enter or Escape or $mod+r
+  # back to normal: Enter or Escape or $mod+Shift+r
   bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+Shift+r mode "resize"
 
-# hide the borders on workspaces with only one window
-hide_edge_borders smart
+# Bindings for miscellaneous and system things {{{2
 
-# disable mouse warping
-mouse_warping none
+# kill focused window
+bindsym $mod+Mod1+q kill
+
+# reload the configuration file
+bindsym $mod+Mod1+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Mod1+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Mod1+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# lock the screen with i3lock
+bindsym $mod+Mod1+l exec "i3lock --image $HOME/Pictures/lock_image --tiling --ignore-empty-password --show-failed-attempts"
+
+# Styling settings {{{1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Hack,FontAwesome 9
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -176,3 +175,11 @@ client.unfocused        #504945 #3c3836 #ebdbb2 #504945 #3c3836
 client.urgent           #fe8019 #d65d0e #ebdbb2 #fe8019 #d65d0e
 client.placeholder      #504945 #3c3836 #ebdbb2 #504945 #3c3836
 client.background       #282828
+
+# Misc settings {{{1
+
+# hide the borders on workspaces with only one window
+hide_edge_borders smart
+
+# disable mouse warping
+mouse_warping none
