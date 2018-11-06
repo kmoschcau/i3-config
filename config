@@ -152,15 +152,15 @@ bar {
   colors {
     # colors for the i3bar components
     # <colorclass> <border> <background> <text>
-    background         #282828
-    statusline         #ebdbb2
-    separator          #665c54
-    focused_background #504945
-    focused_workspace  #83a598 #458588 #ebdbb2
-    active_workspace   #7c6f64 #665c54 #ebdbb2
-    inactive_workspace #504945 #3c3836 #ebdbb2
-    urgent_workspace   #fe8019 #d65d0e #ebdbb2
-    binding_mode       #8ec07c #689d6a #ebdbb2
+    background         #666666
+    statusline         #fafafa
+    separator          #90a4ae
+    focused_background #666666
+    focused_workspace  #39adb5 #39adb5 #fafafa
+    active_workspace   #73b6b0 #73b6b0 #fafafa
+    inactive_workspace #90a4ae #90a4ae #fafafa
+    urgent_workspace   #ffad13 #ffad13 #fafafa
+    binding_mode       #82a550 #82a550 #fafafa
   }
   position top
   status_command i3blocks
@@ -169,12 +169,12 @@ bar {
 
 # Colors:
 # client.<class> <border> <background> <text> <indicator> <child_border>
-client.focused          #83a598 #458588 #ebdbb2 #83a598 #458588
-client.focused_inactive #7c6f64 #665c54 #ebdbb2 #7c6f64 #665c54
-client.unfocused        #504945 #3c3836 #ebdbb2 #504945 #3c3836
-client.urgent           #fe8019 #d65d0e #ebdbb2 #fe8019 #d65d0e
-client.placeholder      #504945 #3c3836 #ebdbb2 #504945 #3c3836
-client.background       #282828
+client.focused          #666666 #39adb5 #fafafa #6182b8 #cceae7
+client.focused_inactive #666666 #73b6b0 #fafafa #8796b0 #eaeff0
+client.unfocused        #666666 #eaeff0 #666666 #8796b0 #eaeff0
+client.urgent           #666666 #ffad13 #fafafa #8796b0 #eaeff0
+client.placeholder      #666666 #cceae7 #666666 #8796b0 #eaeff0
+client.background       #fafafa
 
 # Misc settings {{{1
 
