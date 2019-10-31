@@ -13,7 +13,7 @@ set $mod Mod4
 bindsym $mod+Return exec i3-sensible-terminal
 
 # rofi run launcher
-bindsym $mod+d exec rofi -show run
+bindsym $mod+r exec rofi -show run
 
 # rofi ssh launcher
 bindsym $mod+s exec rofi -show ssh
@@ -118,19 +118,6 @@ bindsym $mod+Shift+f fullscreen toggle
 bindsym $mod+Shift+s layout stacking
 bindsym $mod+Shift+t layout tabbed
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-  # These bindings trigger as soon as you enter the resize mode
-  bindsym h resize shrink width  10 px or 10 ppt
-  bindsym j resize grow   height 10 px or 10 ppt
-  bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow   width  10 px or 10 ppt
-
-  # back to normal: Enter or Escape or $mod+Shift+r
-  bindsym Escape mode "default"
-}
-bindsym $mod+Shift+r mode "resize"
-
 # Bindings for miscellaneous and system things {{{2
 
 # kill focused window
@@ -142,13 +129,13 @@ bindsym $mod+Mod1+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Mod1+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Mod1+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 # Set shut down, restart and locking features
-set $mode_system "(l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown"
+set $mode_system \
+"<b><u>l</u></b>ock, <b><u>e</u></b>xit, switch <b><u>u</u></b>ser, \
+<b><u>s</u></b>uspend, <b><u>h</u></b>ibernate, <b><u>r</u></b>eboot, \
+<b><u>S</u></b>hutdown"
 bindsym $mod+minus mode $mode_system
-mode $mode_system {
+mode --pango_markup $mode_system {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
@@ -161,9 +148,6 @@ mode $mode_system {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-# lock the screen with i3lock
-bindsym $mod+Mod1+l exec "i3lock --image $HOME/Pictures/lock_image --tiling --ignore-empty-password --show-failed-attempts"
 
 # Styling settings {{{1
 
