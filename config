@@ -18,6 +18,11 @@ bindsym $mod+r exec rofi -show run
 # rofi ssh launcher
 bindsym $mod+s exec rofi -show ssh
 
+# pcmanfm file manager
+bindsym $mod+F3 exec pcmanfm
+# as root
+bindsym $mod+Shift+F3 exec pcmanfm_pkexec
+
 # Bindings to switch focus {{{2
 
 # rofi window switcher
