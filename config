@@ -211,6 +211,26 @@ hide_edge_borders smart
 # disable mouse warping
 mouse_warping none
 
+# Window rules {{{1
+# see https://i3wm.org/docs/userguide.html#command_criteria
+
+# Window decorations {{{2
+
+for_window [class=".*"] title_format \
+  "[<b>%class</b>/<small>%instance</small>] %title"
+
+for_window [class="(?i)firefox"] title_format \
+  "<span foreground='#ff6611'>  </span>%title"
+
+for_window [class="(?i)Terminator"] title_format "  %title"
+
+for_window [class="(?i)Pcmanfm"] title_format "  %title"
+
+# Floating rules {{{2
+
+for_window [title="About Mozilla Firefox"] floating enable
+for_window [title="Variety Images"] floating enable
+
 # Startup applications {{{1
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id sh ~/.fehbg; sleep 1; compton -b
