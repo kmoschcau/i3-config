@@ -226,9 +226,13 @@ for_window [class="(?i)Terminator"] title_format "  %title"
 
 for_window [class="(?i)Pcmanfm"] title_format "  %title"
 
+for_window [class="(?i)Blender"] title_format \
+  "<span foreground='#f4792b'>  </span>%title"
+
 # Floating rules {{{2
 
 for_window [title="About Mozilla Firefox"] floating enable
+for_window [title="Blender Preferences"] floating enable
 for_window [title="Variety Images"] floating enable
 
 # Startup applications {{{1
