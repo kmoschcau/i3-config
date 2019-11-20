@@ -222,20 +222,34 @@ mouse_warping none
 for_window [class=".*"] title_format \
   "[<b>%class</b>/<small>%instance</small>] %title"
 
-for_window [class="(?i)firefox"] title_format \
-  "<span foreground='#ff6611'>  </span>%title"
+for_window [class="Blender"] title_format \
+  " <span foreground='#f4792b' background='$dark_neutral'></span> %title"
 
-for_window [class="(?i)Terminator"] title_format "  %title"
+for_window [class="Epdfview"] title_format \
+  " <span foreground='#d11b22' background='$dark_neutral'></span> %title"
 
-for_window [class="(?i)Pcmanfm"] title_format "  %title"
+for_window [class="firefox"] title_format \
+  " <span foreground='#ff6611' background='$dark_neutral'></span> %title"
 
-for_window [class="(?i)Blender"] title_format \
-  "<span foreground='#f4792b'>  </span>%title"
+for_window [class="libreoffice-writer"] title_format \
+  " <span foreground='#adc5e7' background='$dark_neutral'></span> %title"
+
+for_window [class="libreoffice-calc"] title_format \
+  " <span foreground='#add58a' background='$dark_neutral'></span> %title"
+
+for_window [class="libreoffice-impress"] title_format \
+  " <span foreground='#d07e7e' background='$dark_neutral'></span> %title"
+
+for_window [class="Pcmanfm"] title_format "  %title"
+
+for_window [class="Terminator"] title_format "  %title"
 
 # Floating rules {{{2
 
-for_window [title="About Mozilla Firefox"] floating enable
 for_window [title="Blender Preferences"] floating enable
+for_window [class="firefox" instance="Browser"] floating enable
+for_window [class="firefox" instance="Places"] floating enable
+for_window [class="Terminator" title="Terminator Preferences"] floating enable
 for_window [title="Variety Images"] floating enable
 
 # Startup applications {{{1
