@@ -246,10 +246,12 @@ for_window [class="Terminator"] title_format "  %title"
 
 # Floating rules {{{2
 
-for_window [title="Blender Preferences"] floating enable
+for_window [class="Nm-connection-editor" instance="nm-connection-editor"] \
+  floating enable
+for_window [class="Terminator" title="Terminator Preferences"] floating enable
 for_window [class="firefox" instance="Browser"] floating enable
 for_window [class="firefox" instance="Places"] floating enable
-for_window [class="Terminator" title="Terminator Preferences"] floating enable
+for_window [title="Blender Preferences"] floating enable
 for_window [title="Variety Images"] floating enable
 
 # Startup applications {{{1
