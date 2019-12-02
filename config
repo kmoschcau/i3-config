@@ -244,6 +244,9 @@ for_window [class="Pcmanfm"] title_format "  %title"
 
 for_window [class="Terminator"] title_format "  %title"
 
+for_window [class="vlc"] title_format \
+  " <span foreground='#f48b00' background='$dark_neutral'>嗢</span> %title"
+
 # Floating rules {{{2
 
 for_window [class="Nm-connection-editor" instance="nm-connection-editor"] \
