@@ -225,6 +225,9 @@ for_window [class=".*"] title_format \
 for_window [class="Blender"] title_format \
   " <span foreground='#f4792b' background='$dark_neutral'></span> %title"
 
+for_window [class="DBeaver"] title_format \
+  " <span background='$dark_neutral'></span> %title"
+
 for_window [class="Epdfview"] title_format \
   " <span foreground='#d11b22' background='$dark_neutral'></span> %title"
 
