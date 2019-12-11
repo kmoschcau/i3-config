@@ -260,6 +260,16 @@ for_window [class="firefox" instance="Places"] floating enable
 for_window [title="Blender Preferences"] floating enable
 for_window [title="Variety Images"] floating enable
 
+# Workspace rules {{{2
+
+for_window [class="firefox" instance="Navigator"] move to workspace $ws10
+for_window [class="Microsoft Teams - Preview"] move to workspace $ws9
+
+# Output rules {{{1
+
+workspace $ws9 output VGA-2 VGA-1
+workspace $ws10 output VGA-2 VGA-1
+
 # Startup applications {{{1
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id sh ~/.fehbg; sleep 1; compton -b
