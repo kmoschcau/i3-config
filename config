@@ -49,6 +49,11 @@ bindsym $mod+a focus child
 # toggle tiling / floating
 bindsym $mod+Shift+y floating toggle
 
+# enable floating and resize to a size that allows a vim window with a single
+# window to show it entirely in its width
+bindsym $mod+v floating enable; resize set 796 995; border normal 1; \
+  move position center;
+
 # change focus between tiling / floating windows
 bindsym $mod+y focus mode_toggle
 
