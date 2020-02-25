@@ -264,6 +264,7 @@ for_window [title="Microsoft Teams Notification" window_type="notification"] \
   floating enable
 for_window [class="Nm-connection-editor" instance="nm-connection-editor"] \
   floating enable
+for_window [class="org-apache-jmeter-NewDriver"] floating enable
 for_window [class="Terminator" title="Terminator Preferences"] floating enable
 for_window [title="Variety Images"] floating enable
 
