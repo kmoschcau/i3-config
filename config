@@ -168,9 +168,9 @@ set $font_name Arimo Nerd Font
 font pango:$font_name 11
 
 # color definitions {{{2
-set $bright_neutral #eceff1
-set $medium_neutral #90a4ae
-set $dark_neutral #455a64
+set $bright_neutral #fafafa
+set $medium_neutral #9e9e9e
+set $dark_neutral #616161
 set $pale_cyan #b2ebf2
 set $bright_cyan #00b8d4
 set $orange #ff9800
