@@ -242,6 +242,9 @@ for_window [class="Epdfview"] title_format \
 for_window [class="firefox"] title_format \
   " <span foreground='#ff6611' background='$dark_neutral'></span> %title"
 
+for_window [class="Gvim"] title_format \
+  " <span foreground='#bfbfbf' background='$dark_neutral'></span> %title"
+
 for_window [class="libreoffice-writer"] title_format \
   " <span foreground='#adc5e7' background='$dark_neutral'></span> %title"
 
