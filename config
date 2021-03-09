@@ -289,7 +289,7 @@ workspace $ws10 output VGA-2 VGA-1
 
 # Startup applications {{{1
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id sh ~/.fehbg; sleep 1; compton -b
+exec --no-startup-id sh ~/.fehbg; sleep 1; picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id variety
