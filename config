@@ -224,46 +224,7 @@ mouse_warping none
 
 # Window decorations {{{2
 
-for_window [class=".*"] title_format \
-  "[<b>%class</b>/<small>%instance</small>] %title"
-
-for_window [class="Blender"] title_format \
-  " <span foreground='#f4792b' background='$dark_neutral'></span> %title"
-
-for_window [class="DBeaver"] title_format \
-  " <span background='$dark_neutral'></span> %title"
-
-for_window [class="Eclipse"] title_format \
-  " <span foreground='#281d54'></span> %title"
-
-for_window [class="Epdfview"] title_format \
-  " <span foreground='#d11b22' background='$dark_neutral'></span> %title"
-
-for_window [class="firefox"] title_format \
-  " <span foreground='#ff6611' background='$dark_neutral'></span> %title"
-
-for_window [class="Gvim"] title_format \
-  " <span foreground='#bfbfbf' background='$dark_neutral'></span> %title"
-
-for_window [class="jetbrains-idea-ce"] title_format \
-  " <span background='$dark_neutral'></span> %title"
-
-for_window [class="libreoffice-writer"] title_format \
-  " <span foreground='#adc5e7' background='$dark_neutral'></span> %title"
-
-for_window [class="libreoffice-calc"] title_format \
-  " <span foreground='#add58a' background='$dark_neutral'></span> %title"
-
-for_window [class="libreoffice-impress"] title_format \
-  " <span foreground='#d07e7e' background='$dark_neutral'></span> %title"
-
-for_window [class="Pcmanfm"] title_format "  %title"
-
-for_window [class="Terminator"] title_format "  %title"
-for_window [class="Alacritty"] title_format "  %title"
-
-for_window [class="vlc"] title_format \
-  " <span foreground='#f48b00' background='$dark_neutral'>嗢</span> %title"
+for_window [all] title_window_icon on
 
 # Floating rules {{{2
 
