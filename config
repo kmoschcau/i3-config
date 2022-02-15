@@ -241,11 +241,6 @@ for_window [title="Variety History"] floating enable
 for_window [title="Variety Images"] floating enable
 for_window [title="Variety Recent Downloads"] floating enable
 
-# Workspace rules {{{2
-
-for_window [class="firefox" instance="Navigator"] move to workspace $ws10
-for_window [class="Microsoft Teams - Preview"] move to workspace $ws9
-
 # Output rules {{{1
 
 workspace $ws9 output VGA-2 VGA-1
